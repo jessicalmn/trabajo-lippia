@@ -2,7 +2,7 @@ package lippia.web.constants;
 
 public class LoginConstants {
 
-    public static final String INICIA_LA_SESION = "xpath://a[contains(.,'INICIA LA SESIÓN')]";
+    public static final String INICIA_LA_SESION = "xpath:(//a[contains(.,'Inicia la sesión')])[2]";
     public static final String LOGIN_MANUALLY = "xpath://A[@data-test-id='login-manual']";
     public static final String EMAIL_IMPUT = "xpath://*[@id='email']";
     public static final String PASSWORD_IMPUT = "xpath://input[@id='password']";
