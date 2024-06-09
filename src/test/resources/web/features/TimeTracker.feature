@@ -38,6 +38,13 @@ Feature: Projects
       When hace click en el menu y la opcion para descartar
       Then la tarea se cancela exitosamente
 
-
-
-
+  @ModificarTask
+  Scenario: Modificar tarea ingresada
+    Given El cliente selecciona la opcion de tarea manual
+    And El cliente ingresa descripcion de la tarea
+    And ingresa hora de inicio y fin
+    And selecciona fecha
+    And hace click en el boton Add
+    And la tarea de carga exitosamente en el proyecto
+    When el cliente modifica los datos de la tarea en la grilla
+    Then la tarea se actualiza exitosamente
