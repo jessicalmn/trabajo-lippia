@@ -7,9 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.services.TimeTrackerServices;
 
-import java.sql.Time;
-
 public class TimeTrackerSteps extends PageSteps {
+
 
     @And("El cliente ingresa descripcion de la tarea")
     public void elClienteIngresaDescripcionDeLaTarea()
@@ -84,6 +83,7 @@ public class TimeTrackerSteps extends PageSteps {
     @When("el cliente modifica los datos de la tarea en la grilla")
     public void elClienteModificaLosDatosDeLaTareaEnLaGrilla() throws InterruptedException {
         TimeTrackerServices.actualizarNombreTareaExistente();
+        TimeTrackerServices.actualizarBillableTareaExistente();
         TimeTrackerServices.actualizarhorarioTareaExistente();
         TimeTrackerServices.actualizarFechaTareaExistente();
     }

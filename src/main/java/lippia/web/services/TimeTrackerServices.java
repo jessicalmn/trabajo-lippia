@@ -82,9 +82,10 @@ public class TimeTrackerServices {
 
     public static void actualizarhorarioTareaExistente() throws InterruptedException {
 
-        WebActionManager.click(TimeTrakerConstants.INICIO_TASK_EXISTENTE,true);
+        WebActionManager.setInput(TimeTrakerConstants.INICIO_TASK_EXISTENTE, "");
         WebActionManager.setInput(TimeTrakerConstants.INICIO_TASK_EXISTENTE, "1600", true);
         Thread.sleep(2000);
+        WebActionManager.setInput(TimeTrakerConstants.FIN_TASK_EXISTENTE, "");
         WebActionManager.setInput(TimeTrakerConstants.FIN_TASK_EXISTENTE, "1800",true);
         Thread.sleep(2000);
     }
@@ -99,4 +100,9 @@ public class TimeTrackerServices {
     public static void confirmacionActualizacionTarea() {
         WebActionManager.isPresent(TimeTrakerConstants.CONFIRMACION_ACTUALIZACION_FECHA);
     }
+
+    public static void actualizarBillableTareaExistente() {
+        WebActionManager.click(TimeTrakerConstants.BILLABLE);
+    }
+
 }

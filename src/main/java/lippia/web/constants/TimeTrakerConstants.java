@@ -26,6 +26,8 @@ public class TimeTrakerConstants {
     public static final String INICIO_TASK_EXISTENTE = "xpath:(//input[@type='text'])[7]";
     public static final String FIN_TASK_EXISTENTE = "xpath:(//input[@type='text'])[8]";
     public static final String CALENDARIO_TASK_EXISTENTE = "xpath:(//img[@alt='Select date from calendar'])[2]";
+    public static final String BILLABLE = "xpath:(//div[@tabindex='0'][contains(.,'$')])[2]";
+
 
     public static final String CONFIRMACION_ACTUALIZACION_NOMBRE = "xpath://div[@aria-label='Successfully updated description']";
     public static final String CONFIRMACION_ACTUALIZACION_FECHA = "xpath://div[@aria-label='Successfully updated date and time']";

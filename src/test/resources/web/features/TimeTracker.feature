@@ -1,5 +1,5 @@
 @TimeTracker
-Feature: Projects
+Feature: TimeTracker
 
   Background:
     And El cliente esta en la pagina principal
@@ -10,8 +10,7 @@ Feature: Projects
     And El cliente hace click en el boton Log In
     And El cliente verifica que esta en la pagina inicial de cliente logueado
 
-
-  @AgregarTaskAuto
+  @AgregarTaskAuto @AgregarTask
   Scenario: Agregar tarea con contador de tiempo automatico
     Given El cliente selecciona la opcion de tarea con contador
     And El cliente ingresa descripcion de la tarea
@@ -20,7 +19,7 @@ Feature: Projects
     When hace click en stop
     Then la tarea de carga exitosamente en el proyecto
 
-  @AgregarTaskManual
+  @AgregarTaskManual @AgregarTask
   Scenario: Agregar tarea con contador de tiempo manual
     Given El cliente selecciona la opcion de tarea manual
     And El cliente ingresa descripcion de la tarea
