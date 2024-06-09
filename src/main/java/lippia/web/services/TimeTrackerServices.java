@@ -1,14 +1,15 @@
 package lippia.web.services;
 
 import com.crowdar.core.actions.WebActionManager;
-import lippia.web.constants.ProjectConstants;
 import lippia.web.constants.TimeTrakerConstants;
-import oracle.jdbc.dcn.TableChangeDescription;
+
+import static lippia.web.services.GenerarDataServices.nombre_tarea;
 
 public class TimeTrackerServices {
     public static void elClienteIngresaDescripcionDeLaTarea() {
-        WebActionManager.click(TimeTrakerConstants.TAREA);
-        WebActionManager.setInput(TimeTrakerConstants.TAREA,"Tarea ingresada");
+        GenerarDataServices.generarNombreTareaAletorio();
+        WebActionManager.click(TimeTrakerConstants.NOMBRE_TAREA);
+        WebActionManager.setInput(TimeTrakerConstants.NOMBRE_TAREA, nombre_tarea);
     }
 
     public static void haceClickEnStart() {
@@ -25,7 +26,7 @@ public class TimeTrackerServices {
     }
 
     public static void laTareaDeCargaExitosamenteEnElProyecto() {
-        WebActionManager.isPresent(TimeTrakerConstants.MSJ_EXITOSO);
+        WebActionManager.isPresent(TimeTrakerConstants.MSJ_CREACION_TASK_EXITOSO);
     }
 
     public static void ingresaHoraDeInicioYFin() {
@@ -36,11 +37,11 @@ public class TimeTrackerServices {
     }
 
     public static void elClienteSeleccionaLaOpcionDeTareaManual() {
-        WebActionManager.click(TimeTrakerConstants.TASK_MANUAL);
+        WebActionManager.click(TimeTrakerConstants.OPCION_TASK_MANUAL);
     }
 
     public static void haceClickEnElBotonAdd() throws InterruptedException {
-        WebActionManager.click(TimeTrakerConstants.BUTTON_ADD_TASK);
+        WebActionManager.click(TimeTrakerConstants.BOTON_ADD_TASK);
         Thread.sleep(3000);
     }
 
@@ -50,6 +51,17 @@ public class TimeTrackerServices {
     }
 
     public static void elClienteSeleccionaLaOpcionDeTareaConContador() {
-        WebActionManager.click(TimeTrakerConstants.TASK_CONTADOR);
+        WebActionManager.click(TimeTrakerConstants.OPCION_TASK_CONTADOR);
+    }
+
+    public static void haceClickEnElMenuYLaOpcionParaDescartar() throws InterruptedException {
+        WebActionManager.click(TimeTrakerConstants.MENU_TASK);
+        WebActionManager.click(TimeTrakerConstants.OPCION_DISCARD);
+        WebActionManager.click(TimeTrakerConstants.CONFIRMAR_DISCARD);
+        Thread.sleep(2000);
+    }
+
+    public static void laTareaSeCancelaExitosamente() {
+        WebActionManager.isPresent(TimeTrakerConstants.MSJ_CANCELACION_TASK);
     }
 }

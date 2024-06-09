@@ -9,7 +9,7 @@ public class GenerarDataServices {
     public static void generarNombreTareaAletorio() {
         int longitud;
         longitud = 6;
-        String nombre_tarea = "";
+        nombre_tarea = "";
         for (int cont = 1; cont <= longitud; cont++) {
             int num = (int) ((Math.random() * (('z' - 'a') + 1)) + 'a');
             char letra = (char) num;

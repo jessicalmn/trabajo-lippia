@@ -13,10 +13,9 @@ import java.sql.Time;
 
 public class TimeTrackerSteps extends PageSteps {
 
-    @Given("El cliente ingresa descripcion de la tarea")
+    @And("El cliente ingresa descripcion de la tarea")
     public void elClienteIngresaDescripcionDeLaTarea()
     {
-        GenerarDataServices.generarNombreTareaAletorio();
         TimeTrackerServices.elClienteIngresaDescripcionDeLaTarea();
     }
 
@@ -67,5 +66,19 @@ public class TimeTrackerSteps extends PageSteps {
     public void elClienteSeleccionaLaOpcionDeTareaConContador() {
         TimeTrackerServices.elClienteSeleccionaLaOpcionDeTareaConContador();
 
+    }
+
+    @When("hace click en el menu y la opcion para descartar")
+    public void haceClickEnElMenuYLaOpcionParaDescartar() throws InterruptedException {
+        TimeTrackerServices.haceClickEnElMenuYLaOpcionParaDescartar();
+    }
+
+    @Then("la tarea se cancela exitosamente")
+    public void laTareaSeCancelaExitosamente() {
+        TimeTrackerServices.laTareaSeCancelaExitosamente();
+    }
+
+    @And("El cliente ingresa descripcion de la tarea {string}")
+    public void elClienteIngresaDescripcionDeLaTarea(String arg0) {
     }
 }

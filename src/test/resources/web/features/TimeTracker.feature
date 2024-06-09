@@ -12,7 +12,6 @@ Feature: Projects
 
 
   @AgregarTaskAuto
-
   Scenario: Agregar tarea con contador de tiempo automatico
     Given El cliente selecciona la opcion de tarea con contador
     And El cliente ingresa descripcion de la tarea
@@ -22,7 +21,6 @@ Feature: Projects
     Then la tarea de carga exitosamente en el proyecto
 
   @AgregarTaskManual
-
   Scenario: Agregar tarea con contador de tiempo manual
     Given El cliente selecciona la opcion de tarea manual
     And El cliente ingresa descripcion de la tarea
@@ -30,4 +28,16 @@ Feature: Projects
     And selecciona fecha
     When hace click en el boton Add
     Then la tarea de carga exitosamente en el proyecto
+
+    @DescartarTask
+    Scenario: Descartar tarea ingresada
+      Given El cliente selecciona la opcion de tarea con contador
+      And El cliente ingresa descripcion de la tarea
+      And hace click en start
+      And espera tiempo de carga
+      When hace click en el menu y la opcion para descartar
+      Then la tarea se cancela exitosamente
+
+
+
 
